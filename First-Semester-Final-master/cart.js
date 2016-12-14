@@ -12,14 +12,14 @@ class Cart{
   }
   totalCart(){
     let total = 0;
-    for(c = 0, c<this.itemList.length, c++){
+    for(let c = 0, c<this.itemList.length, c++){
     total += this.itemList[c].price * this.itemQuantity[c];
     }
     return total;
   }
   subCart(days){
     subCart = new Cart([],[]);
-    for(c = 0, c<this.itemList.length, c++){
+    for(let x = 0, x <this.itemList.length, x ++){
       if(this.itemList[c].shipping == days){
         subCart.itemList.push(this.itemList[c]);
       }

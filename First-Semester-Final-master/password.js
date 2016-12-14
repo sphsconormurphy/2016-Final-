@@ -30,5 +30,22 @@ class Password{
   }
 
   //Static function below this comment.
+  static makePrivateKey(){
+    let key = "";
+    let limit = 14;
+    for(let d = 0, d < limit, d ++){
+      if(i == 4 || i == 9){
+        key = key + "-";
+      }
+      else{
+        let number = Math.random();
+        number = Math.ceil(number * 9);
+        number = number + 48;
+        numner = String(number);
+        key = key + number;
+      }
+    }
+    return key;
+  }
 
 }
