@@ -16,11 +16,13 @@ class Password{
     }
   }
   validPrivateKey(){
-      for(let w = 0, w < this.privatekey.length, w ++){
-        if(this.privatekey[4] !== "-" || this.privatekey[9] !== "-"){
-          return false;
+      for(let w = 0; w < this.privatekey.length; w ++){
+        if(w == 4 || w == 9){
+          if(this.privatekey[w] !== "-"){
+            return false;
+          }
         }
-        else if(Number.isNaN(this.privatekey[w]) == true){
+        else if(Number.isNaN(this.privatekey[w])){
           return false;
         }
       }
@@ -31,19 +33,19 @@ class Password{
   static makePrivateKey(){
     let key = "";
     let limit = 14;
-    for(let d = 0, d < limit, d ++){
+    for(let d = 0; d < limit; d ++){
       if(d == 4 || d == 9){
         key = key + "-";
       }
       else{
         let number = Math.random();
         number = Math.ceil(number * 9);
-        number = number + 48;
         number = String(number);
         key = key + number;
-      }
     }
-    return key;
+
+    }
+      return key;
   }
 
 }
