@@ -10,6 +10,6 @@ constructor(n, p, s){
 }
 
 //Create your three test items below this comment.
-let one = new Item(one, 14, 4);
-let two = new Item(two, 12, 5);
-let three = new Item(three, 25, 4);
+let one = new Item("One", 14, 4);
+let two = new Item("Two", 12, 5);
+let three = new Item("Three", 25, 4);

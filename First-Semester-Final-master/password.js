@@ -1,8 +1,8 @@
 class Password{
   //The first part of the class.
-  constructor(p, pk){
-    this.publickey = p;
-    this.privatekey = pk;
+  constructor(pub, priv){
+    this.publickey = pub;
+    this.privatekey = priv;
   }
 
 
@@ -16,17 +16,15 @@ class Password{
     }
   }
   validPrivateKey(){
-    if(this.privatekey[4] == "-" && this.privatekey[9] == "-"){
-      if(){
-        return true;
+      for(let w = 0, w < this.privatekey.length, w ++){
+        if(this.privatekey[4] !== "-" || this.privatekey[9] !== "-"){
+          return false;
+        }
+        else if(Number.isNaN(this.privatekey[w]) == true){
+          return false;
+        }
       }
-      else{
-        return false;
-      }
-    }
-    else{
-      return false;
-    }
+      return true;
   }
 
   //Static function below this comment.
@@ -34,14 +32,14 @@ class Password{
     let key = "";
     let limit = 14;
     for(let d = 0, d < limit, d ++){
-      if(i == 4 || i == 9){
+      if(d == 4 || d == 9){
         key = key + "-";
       }
       else{
         let number = Math.random();
         number = Math.ceil(number * 9);
         number = number + 48;
-        numner = String(number);
+        number = String(number);
         key = key + number;
       }
     }
